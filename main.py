@@ -5,6 +5,15 @@ from openai import OpenAI
 from datetime import datetime
 from notion_client import Client
 
+st.title("🔍 Secrets デバッグ")
+
+# デプロイ環境で実際に読めているかプリント
+st.write("OPENAI_API_KEY =", os.getenv("OPENAI_API_KEY"))
+st.write("NOTION_API_KEY =", os.getenv("NOTION_API_KEY"))
+st.write("NOTION_DATABASE_ID =", os.getenv("NOTION_DATABASE_ID"))
+
+st.stop()  # 以降の処理は止めて、ここまでだけを試します
+
 # --- ヘルパー関数（Notionに保存） ---
 def create_notion_page(token, database_id, question, answer, user, rating):
     notion = Client(auth=token)
