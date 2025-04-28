@@ -1,6 +1,5 @@
 import streamlit as st
 import os
-from dotenv import load_dotenv
 from openai import OpenAI
 from datetime import datetime
 from notion_client import Client
@@ -49,7 +48,6 @@ def create_notion_page(token, database_id, question, answer, user, rating):
         raise RuntimeError(f"❌ Notionへの保存に失敗しました: {str(e)}")
 
 # --- 環境変数の読み込み ---
-load_dotenv()
 openai_key = os.getenv("OPENAI_API_KEY")
 notion_token = os.getenv("NOTION_API_KEY")
 notion_db_id = os.getenv("NOTION_DATABASE_ID")
