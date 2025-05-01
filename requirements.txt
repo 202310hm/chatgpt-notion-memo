@@ -2,3 +2,5 @@ openai
 notion-client
 streamlit
 python-dotenv
+pytesseract
+pdf2image
